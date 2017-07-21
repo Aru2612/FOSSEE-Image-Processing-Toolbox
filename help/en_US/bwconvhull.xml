@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from bwconvhull.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="bwconvhull" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>bwconvhull</refname>
+    <refpurpose>Generate convex hull image from binary image</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   hull = bwconvhull(img)
+   hull = bwconvhull(img,'Object',n)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>img :</term>
+      <listitem><para> 2-D array of points in vector or mask form</para></listitem></varlistentry>
+   <varlistentry><term>'Object' :</term>
+      <listitem><para> Compute the convex hull of each connected component of 'img' individually. 'hull' contains the convex hulls of each connected component.</para></listitem></varlistentry>
+   <varlistentry><term>n :</term>
+      <listitem><para> Connectivity</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Generate convex hull image from binary image either taking individual connected components or taking all the components together.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+img = imread('images/coin_thresh.png');
+img = cvtColor(img,'CV_BGR2GRAY');
+res1 = bwconvhull(img);
+imshow(res1)
+res2 = bwconvhull(img,'Object',4);
+figure;
+imshow(res2)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ebey Abraham</member>
+   <member>Tess Zacharias</member>
+   </simplelist>
+</refsection>
+</refentry>

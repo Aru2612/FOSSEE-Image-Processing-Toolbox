@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from clipLine.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="clipLine" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>clipLine</refname>
+    <refpurpose>Clips the line against the image rectangle.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   res = clipline(width, height, x1, y1, x2, y2)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>width :</term>
+      <listitem><para> width of the image</para></listitem></varlistentry>
+   <varlistentry><term>height :</term>
+      <listitem><para> height of the image</para></listitem></varlistentry>
+   <varlistentry><term>x1 :</term>
+      <listitem><para> x-cordinate of first end of the line</para></listitem></varlistentry>
+   <varlistentry><term>y1 :</term>
+      <listitem><para> y-cordinate of first end of the line</para></listitem></varlistentry>
+   <varlistentry><term>x2 :</term>
+      <listitem><para> x-cordinate of second end of the line</para></listitem></varlistentry>
+   <varlistentry><term>y2 :</term>
+      <listitem><para> y-cordinate of second end of the line</para></listitem></varlistentry>
+   <varlistentry><term>res :</term>
+      <listitem><para> boolean output value</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The functions clipLine calculate a part of the line segment that is entirely within the specified rectangle.
+They return false if the line segment is completely outside the rectangle. Otherwise, they return true .
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+clipLine(10,10,1,2,5,9)
+//will give True
+
+clipLine(10,10,28,25,26,12)
+//will give False
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Sukul Bagai</member>
+   <member>Abhilasha Sancheti</member>
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

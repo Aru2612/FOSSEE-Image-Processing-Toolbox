@@ -1,0 +1,96 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>clipLine</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="canny.html">&lt;&lt; canny</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="convexHull.html">convexHull &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Image Processing Toolbox</a> &gt;&gt; <a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a> &gt; clipLine</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">clipLine</h1>
+    <p class="refpurpose">Clips the line against the image rectangle.</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">res</span><span class="default"> = </span><span class="default">clipline</span><span class="default">(</span><span class="default">width</span><span class="default">, </span><span class="default">height</span><span class="default">, </span><span class="default">x1</span><span class="default">, </span><span class="default">y1</span><span class="default">, </span><span class="default">x2</span><span class="default">, </span><span class="default">y2</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">width :</span>
+      <dd><p class="para">width of the image</p></dd></dt>
+   <dt><span class="term">height :</span>
+      <dd><p class="para">height of the image</p></dd></dt>
+   <dt><span class="term">x1 :</span>
+      <dd><p class="para">x-cordinate of first end of the line</p></dd></dt>
+   <dt><span class="term">y1 :</span>
+      <dd><p class="para">y-cordinate of first end of the line</p></dd></dt>
+   <dt><span class="term">x2 :</span>
+      <dd><p class="para">x-cordinate of second end of the line</p></dd></dt>
+   <dt><span class="term">y2 :</span>
+      <dd><p class="para">y-cordinate of second end of the line</p></dd></dt>
+   <dt><span class="term">res :</span>
+      <dd><p class="para">boolean output value</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">The functions clipLine calculate a part of the line segment that is entirely within the specified rectangle.
+They return false if the line segment is completely outside the rectangle. Otherwise, they return true .</p>
+   <p class="para"></p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabid">clipLine</span><span class="scilabopenclose">(</span><span class="scilabnumber">10</span><span class="scilabdefault">,</span><span class="scilabnumber">10</span><span class="scilabdefault">,</span><span class="scilabnumber">1</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabdefault">,</span><span class="scilabnumber">5</span><span class="scilabdefault">,</span><span class="scilabnumber">9</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//will give True</span>
+
+<span class="scilabid">clipLine</span><span class="scilabopenclose">(</span><span class="scilabnumber">10</span><span class="scilabdefault">,</span><span class="scilabnumber">10</span><span class="scilabdefault">,</span><span class="scilabnumber">28</span><span class="scilabdefault">,</span><span class="scilabnumber">25</span><span class="scilabdefault">,</span><span class="scilabnumber">26</span><span class="scilabdefault">,</span><span class="scilabnumber">12</span><span class="scilabopenclose">)</span>
+<span class="scilabcomment">//will give False</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Sukul Bagai</li>
+   <li class="member">Abhilasha Sancheti</li>
+   <li class="member">Ebey Abraham</li></ul></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="canny.html">&lt;&lt; canny</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="convexHull.html">convexHull &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

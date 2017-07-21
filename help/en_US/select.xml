@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from select.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="select" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>select</refname>
+    <refpurpose>Select points by index</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   pointCloud = select(s,indices)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>s :</term>
+      <listitem><para> pointCloud object</para></listitem></varlistentry>
+   <varlistentry><term>indices :</term>
+      <listitem><para> 1xN matric specifying the indices of the points to select</para></listitem></varlistentry>
+   <varlistentry><term>pointCloud :</term>
+      <listitem><para> Resulting point cloud with the selected points</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Returns point cloud with only the points specified by the input indices
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+s1 = pcread('data/teapot.ply')
+ROI = findPointsInROI(s1,[-1,1;-1,1;-1,1]);
+s2 = select(s1,ROI)
+pcshowpair(s1,s2)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

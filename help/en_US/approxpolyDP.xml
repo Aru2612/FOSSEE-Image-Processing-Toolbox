@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from approxpolyDP.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="approxpolyDP" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>approxpolyDP</refname>
+    <refpurpose>Approximates a polygonal curve(s) with the specified precision.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   approxCurve = approxpolyDP(inputCurve, epsilon, closed)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>inputCurve :</term>
+      <listitem><para> Input vector of a 2D point</para></listitem></varlistentry>
+   <varlistentry><term>epsilon :</term>
+      <listitem><para>  Parameter specifying the approximation accuracy. This is the maximum distance between the original curve and its approximation.</para></listitem></varlistentry>
+   <varlistentry><term>closed :</term>
+      <listitem><para> If true, the approximated curve is closed (its first and last vertices are connected). Otherwise, it is not closed.</para></listitem></varlistentry>
+   <varlistentry><term>approxCurve :</term>
+      <listitem><para> Result of the approximation.</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The functions approxPolyDP approximate a curve or a polygon with another curve/polygon with less vertices so that the distance between them is less or equal to the specified precision.
+It uses the Douglas-Peucker algorithm .
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+img = imread('images/approx.jpg');
+gray = cvtColor(img,'CV_BGR2GRAY');
+thresh = threshold(gray,100,255,'THRESH_BINARY');
+contours = findContours(thresh,1,2,0,0);
+//Draw contours in red
+for i =1:size(contours)
+img = drawContours(img,contours,i,[255,0,0],2);
+end
+approx = list();
+//Draw approximated curves in blue
+for i =1:size(contours)
+epsilon = 0.1*arcLength(contours(i),'True');
+approx(i) = approxpolyDP(contours(i),epsilon,'True');
+img = drawContours(img,approx,i,[0,0,255],2);
+end
+imshow(img)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Priyanka Hiranandani</member>
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

@@ -1,0 +1,96 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>pcdownsample</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="pcdenoise.html">&lt;&lt; pcdenoise</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="pcmerge.html">pcmerge &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Image Processing Toolbox</a> &gt;&gt; <a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a> &gt; pcdownsample</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">pcdownsample</h1>
+    <p class="refpurpose">Downsample a point cloud</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">pointCloudOut</span><span class="default"> = </span><span class="functionid">pcdownsample</span><span class="default">(</span><span class="default">pointCloudIn</span><span class="default">, </span>&#0039;<span class="default">random</span>&#0039;<span class="default">, </span><span class="default">percentage</span><span class="default">)</span>
+<span class="default">pointCloudOut</span><span class="default"> = </span><span class="functionid">pcdownsample</span><span class="default">(</span><span class="default">pointCloudIn</span><span class="default">, </span>&#0039;<span class="default">gridAverage</span>&#0039;<span class="default">, </span><span class="default">gridStep</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">pointCloudIn :</span>
+      <dd><p class="para">Input point cloud</p></dd></dt>
+   <dt><span class="term">pointCloudOut :</span>
+      <dd><p class="para">Output point cloud</p></dd></dt>
+   <dt><span class="term">&#0039;random&#0039; :</span>
+      <dd><p class="para">Downsample cloud using random sampling</p></dd></dt>
+   <dt><span class="term">percentage :</span>
+      <dd><p class="para">Percentage of input point cloud that should be present in ouput cloud</p></dd></dt>
+   <dt><span class="term">&#0039;gridAverage&#0039; :</span>
+      <dd><p class="para">Downsample using grid filter</p></dd></dt>
+   <dt><span class="term">gridStep :</span>
+      <dd><p class="para">Size of grid</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Downsamples a point cloud using the specified method</p>
+   <p class="para"></p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabcomment">//Downsample using random sampling</span>
+<span class="scilabid">s</span> <span class="scilaboperator">=</span> <span class="scilabid">pcread</span><span class="scilabopenclose">(</span><span class="scilabstring">&#0039;</span><span class="scilabstring">data/teapot.ply</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">res</span> <span class="scilaboperator">=</span> <span class="scilabid">pcdownsample</span><span class="scilabopenclose">(</span><span class="scilabid">s</span><span class="scilabdefault">,</span><span class="scilabstring">&#0039;</span><span class="scilabstring">random</span><span class="scilabstring">&#0039;</span><span class="scilabdefault">,</span><span class="scilabnumber">10</span><span class="scilabopenclose">)</span>
+<span class="scilabid">pcshowpair</span><span class="scilabopenclose">(</span><span class="scilabid">s</span><span class="scilabdefault">,</span><span class="scilabid">res</span><span class="scilabopenclose">)</span>
+
+<span class="scilabcomment">//Downsample using box grid</span>
+<span class="scilabid">s</span> <span class="scilaboperator">=</span> <span class="scilabid">pcread</span><span class="scilabopenclose">(</span><span class="scilabstring">&#0039;</span><span class="scilabstring">data/teapot.ply</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">res</span> <span class="scilaboperator">=</span> <span class="scilabid">pcdownsample</span><span class="scilabopenclose">(</span><span class="scilabid">s</span><span class="scilabdefault">,</span><span class="scilabstring">&#0039;</span><span class="scilabstring">random</span><span class="scilabstring">&#0039;</span><span class="scilabdefault">,</span><span class="scilabnumber">10</span><span class="scilabopenclose">)</span>
+<span class="scilabid">pcshowpair</span><span class="scilabopenclose">(</span><span class="scilabid">s</span><span class="scilabdefault">,</span><span class="scilabid">res</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Ebey Abraham</li></ul></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="pcdenoise.html">&lt;&lt; pcdenoise</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="pcmerge.html">pcmerge &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

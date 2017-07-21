@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from fillConvexPoly.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="fillConvexPoly" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>fillConvexPoly</refname>
+    <refpurpose>Draw a filled convex polygon</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   res = fillConvexPoly(src, points, npoints, R, G, B, linetype, shift)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>src :</term>
+      <listitem><para> Image</para></listitem></varlistentry>
+   <varlistentry><term>points :</term>
+      <listitem><para> Matrix of 2D cordinates defining the vertices of the polygon</para></listitem></varlistentry>
+   <varlistentry><term>npoints :</term>
+      <listitem><para> Number of vertices</para></listitem></varlistentry>
+   <varlistentry><term>R, G, B :</term>
+      <listitem><para> RGB values of the filled polygon</para></listitem></varlistentry>
+   <varlistentry><term>linetype :</term>
+      <listitem><para> Type of polygon boundaries</para></listitem></varlistentry>
+   <varlistentry><term>shift :</term>
+      <listitem><para> Number of fractional bits in vertex cordinates</para></listitem></varlistentry>
+   <varlistentry><term>res :</term>
+      <listitem><para> Output image with the filled polygon</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Draws a filled convex polygon defined by the specified cordinates on the source image.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+// generates a random pattern
+for i=1:3
+img(:,:,i) = ones(255,255);
+end
+rand('seed',getdate('s'));
+for i=1:10
+// draw triangles
+pts = rand(3,2) * 200;
+color = rand(1,3) * 200;
+img = fillConvexPoly(img,pts,3,color(1),color(2),color(3),8,0);
+// draw squares
+pts = rand(4,2) * 300;
+color = rand(1,3) * 200;
+img = fillConvexPoly(img,pts,3,color(1),color(2),color(3),8,0);
+// draw pentagons
+pts = rand(5,2) * 500;
+color = rand(1,3) * 200;
+img = fillConvexPoly(img,pts,3,color(1),color(2),color(3),8,0);
+end
+imshow(img)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Abhilasha Sancheti</member>
+   <member>Shubheksha Jalan</member>
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

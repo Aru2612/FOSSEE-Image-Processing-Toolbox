@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from removeInvalidPoints.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="removeInvalidPoints" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>removeInvalidPoints</refname>
+    <refpurpose>Remove invalid points from a point cloud</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   [OutputPointCloud,indices] = removeInvalidPoints(InputPointCloud)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>InputPointCloud :</term>
+      <listitem><para> Input point cloud object which may contain invalid points</para></listitem></varlistentry>
+   <varlistentry><term>OutputPointCloud :</term>
+      <listitem><para> Resultant point cloud after removing invalid points</para></listitem></varlistentry>
+   <varlistentry><term>indices :</term>
+      <listitem><para> Indices of the valid points in input point cloud object</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Return a point cloud object after Inf and Nan points from the input point cloud object
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+//The first point in the file is Inf and the second point is NaN
+s = pcread('data/sphere.ply')
+[pt indices] = removeInvalidPoints(s);
+pt
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

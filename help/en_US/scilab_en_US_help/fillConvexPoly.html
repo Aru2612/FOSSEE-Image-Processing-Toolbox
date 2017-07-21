@@ -1,0 +1,110 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>fillConvexPoly</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="drawContours.html">&lt;&lt; drawContours</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="findPointsInROI.html">findPointsInROI &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Image Processing Toolbox</a> &gt;&gt; <a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a> &gt; fillConvexPoly</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">fillConvexPoly</h1>
+    <p class="refpurpose">Draw a filled convex polygon</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">res</span><span class="default"> = </span><span class="functionid">fillConvexPoly</span><span class="default">(</span><span class="default">src</span><span class="default">, </span><span class="default">points</span><span class="default">, </span><span class="default">npoints</span><span class="default">, </span><span class="default">R</span><span class="default">, </span><span class="default">G</span><span class="default">, </span><span class="default">B</span><span class="default">, </span><span class="default">linetype</span><span class="default">, </span><span class="default">shift</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">src :</span>
+      <dd><p class="para">Image</p></dd></dt>
+   <dt><span class="term">points :</span>
+      <dd><p class="para">Matrix of 2D cordinates defining the vertices of the polygon</p></dd></dt>
+   <dt><span class="term">npoints :</span>
+      <dd><p class="para">Number of vertices</p></dd></dt>
+   <dt><span class="term">R, G, B :</span>
+      <dd><p class="para">RGB values of the filled polygon</p></dd></dt>
+   <dt><span class="term">linetype :</span>
+      <dd><p class="para">Type of polygon boundaries</p></dd></dt>
+   <dt><span class="term">shift :</span>
+      <dd><p class="para">Number of fractional bits in vertex cordinates</p></dd></dt>
+   <dt><span class="term">res :</span>
+      <dd><p class="para">Output image with the filled polygon</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Draws a filled convex polygon defined by the specified cordinates on the source image.</p>
+   <p class="para"></p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabcomment">// generates a random pattern</span>
+<span class="scilabskeyword">for</span> <span class="scilabid">i</span><span class="scilaboperator">=</span><span class="scilabnumber">1</span><span class="scilabspecial">:</span><span class="scilabnumber">3</span>
+<span class="scilabid">img</span><span class="scilabopenclose">(</span><span class="scilabspecial">:</span><span class="scilabdefault">,</span><span class="scilabspecial">:</span><span class="scilabdefault">,</span><span class="scilabid">i</span><span class="scilabopenclose">)</span> <span class="scilaboperator">=</span> <a class="scilabcommand" href="scilab://ones">ones</a><span class="scilabopenclose">(</span><span class="scilabnumber">255</span><span class="scilabdefault">,</span><span class="scilabnumber">255</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabskeyword">end</span>
+<a class="scilabcommand" href="scilab://rand">rand</a><span class="scilabopenclose">(</span><span class="scilabstring">&#0039;</span><span class="scilabstring">seed</span><span class="scilabstring">&#0039;</span><span class="scilabdefault">,</span><a class="scilabcommand" href="scilab://getdate">getdate</a><span class="scilabopenclose">(</span><span class="scilabstring">&#0039;</span><span class="scilabstring">s</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabskeyword">for</span> <span class="scilabid">i</span><span class="scilaboperator">=</span><span class="scilabnumber">1</span><span class="scilabspecial">:</span><span class="scilabnumber">10</span>
+<span class="scilabcomment">// draw triangles</span>
+<span class="scilabid">pts</span> <span class="scilaboperator">=</span> <a class="scilabcommand" href="scilab://rand">rand</a><span class="scilabopenclose">(</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span> <span class="scilaboperator">*</span> <span class="scilabnumber">200</span><span class="scilabdefault">;</span>
+<a class="scilabmacro" href="scilab://color">color</a> <span class="scilabstring">=</span> <span class="scilabstring">rand(1</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabopenclose">)</span> <span class="scilaboperator">*</span> <span class="scilabnumber">200</span><span class="scilabdefault">;</span>
+<span class="scilabid">img</span> <span class="scilaboperator">=</span> <span class="scilabid">fillConvexPoly</span><span class="scilabopenclose">(</span><span class="scilabid">img</span><span class="scilabdefault">,</span><span class="scilabid">pts</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><a class="scilabmacro" href="scilab://color">color</a><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><a class="scilabmacro" href="scilab://color">color</a><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><a class="scilabmacro" href="scilab://color">color</a><span class="scilabopenclose">(</span><span class="scilabnumber">3</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><span class="scilabnumber">8</span><span class="scilabdefault">,</span><span class="scilabnumber">0</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabcomment">// draw squares</span>
+<span class="scilabid">pts</span> <span class="scilaboperator">=</span> <a class="scilabcommand" href="scilab://rand">rand</a><span class="scilabopenclose">(</span><span class="scilabnumber">4</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span> <span class="scilaboperator">*</span> <span class="scilabnumber">300</span><span class="scilabdefault">;</span>
+<a class="scilabmacro" href="scilab://color">color</a> <span class="scilabstring">=</span> <span class="scilabstring">rand(1</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabopenclose">)</span> <span class="scilaboperator">*</span> <span class="scilabnumber">200</span><span class="scilabdefault">;</span>
+<span class="scilabid">img</span> <span class="scilaboperator">=</span> <span class="scilabid">fillConvexPoly</span><span class="scilabopenclose">(</span><span class="scilabid">img</span><span class="scilabdefault">,</span><span class="scilabid">pts</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><a class="scilabmacro" href="scilab://color">color</a><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><a class="scilabmacro" href="scilab://color">color</a><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><a class="scilabmacro" href="scilab://color">color</a><span class="scilabopenclose">(</span><span class="scilabnumber">3</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><span class="scilabnumber">8</span><span class="scilabdefault">,</span><span class="scilabnumber">0</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabcomment">// draw pentagons</span>
+<span class="scilabid">pts</span> <span class="scilaboperator">=</span> <a class="scilabcommand" href="scilab://rand">rand</a><span class="scilabopenclose">(</span><span class="scilabnumber">5</span><span class="scilabdefault">,</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span> <span class="scilaboperator">*</span> <span class="scilabnumber">500</span><span class="scilabdefault">;</span>
+<a class="scilabmacro" href="scilab://color">color</a> <span class="scilabstring">=</span> <span class="scilabstring">rand(1</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabopenclose">)</span> <span class="scilaboperator">*</span> <span class="scilabnumber">200</span><span class="scilabdefault">;</span>
+<span class="scilabid">img</span> <span class="scilaboperator">=</span> <span class="scilabid">fillConvexPoly</span><span class="scilabopenclose">(</span><span class="scilabid">img</span><span class="scilabdefault">,</span><span class="scilabid">pts</span><span class="scilabdefault">,</span><span class="scilabnumber">3</span><span class="scilabdefault">,</span><a class="scilabmacro" href="scilab://color">color</a><span class="scilabopenclose">(</span><span class="scilabnumber">1</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><a class="scilabmacro" href="scilab://color">color</a><span class="scilabopenclose">(</span><span class="scilabnumber">2</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><a class="scilabmacro" href="scilab://color">color</a><span class="scilabopenclose">(</span><span class="scilabnumber">3</span><span class="scilabopenclose">)</span><span class="scilabdefault">,</span><span class="scilabnumber">8</span><span class="scilabdefault">,</span><span class="scilabnumber">0</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabskeyword">end</span>
+<span class="scilabid">imshow</span><span class="scilabopenclose">(</span><span class="scilabid">img</span><span class="scilabopenclose">)</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Abhilasha Sancheti</li>
+   <li class="member">Shubheksha Jalan</li>
+   <li class="member">Ebey Abraham</li></ul></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="drawContours.html">&lt;&lt; drawContours</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="findPointsInROI.html">findPointsInROI &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pcmerge.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pcmerge" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pcmerge</refname>
+    <refpurpose>Merge two point clouds</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   pointCloud = pcmerge(pointCloud1,pointCloud2,girdSize)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>pointCloud1 :</term>
+      <listitem><para> First point cloud</para></listitem></varlistentry>
+   <varlistentry><term>pointCloud2 :</term>
+      <listitem><para> Second point cloud</para></listitem></varlistentry>
+   <varlistentry><term>gridSize :</term>
+      <listitem><para> Parameter specifying the size of the grid used to filter the result</para></listitem></varlistentry>
+   <varlistentry><term>pointCloud :</term>
+      <listitem><para> Resultant point cloud after merging the two input point clouds</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Merges the two input point clouds and applies a gird filter
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+s1 = pcread('data/cycloidal.ply')
+s2 = pcread('data/teapot.ply')
+s = pcmerge(s1,s2,.1)
+pcshow(s.Location)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

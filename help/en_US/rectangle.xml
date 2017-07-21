@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from rectangle.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="rectangle" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>rectangle</refname>
+    <refpurpose>Draws a simple, thick, or filled up-right rectangle.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   res = rectangle(src,x1,y1,x2,y2,R,G,B,lineType,thickness,shift)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>src :</term>
+      <listitem><para> image</para></listitem></varlistentry>
+   <varlistentry><term>x1 :</term>
+      <listitem><para> x-cordinate of top left corner of rectangle</para></listitem></varlistentry>
+   <varlistentry><term>y1 :</term>
+      <listitem><para> y-cordinate of top left corner of rectangle</para></listitem></varlistentry>
+   <varlistentry><term>x2 :</term>
+      <listitem><para> x-cordinate of bottom right corner of rectangle</para></listitem></varlistentry>
+   <varlistentry><term>y2 :</term>
+      <listitem><para> y-cordinate of bottom right corner of rectangle</para></listitem></varlistentry>
+   <varlistentry><term>R,G,B :</term>
+      <listitem><para> rgb value of rectangle</para></listitem></varlistentry>
+   <varlistentry><term>lineType :</term>
+      <listitem><para> type of the line</para></listitem></varlistentry>
+   <varlistentry><term>thickness :</term>
+      <listitem><para> line thickness</para></listitem></varlistentry>
+   <varlistentry><term>shift :</term>
+      <listitem><para> Number of fractional bits in the point coordinates</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The function rectangle draws a rectangle outline or a filled rectangle whose two opposite corners are (x1,y1) and (x2,y2)
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+img = imread('images/coin_thresh.png');
+gray = cvtColor(img,'CV_BGR2GRAY');
+contours = findContours(gray,3,2,0,0);
+for i = 1:size(contours)
+rect = boundingRect(contours(i));
+x1 = rect(3);
+y1 = rect(4);
+x2 = x1 + rect(1);
+y2 = y1 + rect(2);
+img = rectangle(img,x1,y1,x2,y2,0,0,255,2,8,0);
+end
+imshow(img)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Sukul Bagai</member>
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

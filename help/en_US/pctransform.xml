@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pctransform.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pctransform" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pctransform</refname>
+    <refpurpose>Transform a point cloud</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   pointCloudOut = pctransform(pointCloudIn, tform)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>pointCloudIn :</term>
+      <listitem><para> Input point cloud</para></listitem></varlistentry>
+   <varlistentry><term>pointCloudOut :</term>
+      <listitem><para> Output point cloud</para></listitem></varlistentry>
+   <varlistentry><term>tform :</term>
+      <listitem><para> affine 3D object specifying the transformation</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Returns a transformed point cloud
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+s = pcread('data/teapot.ply');
+A = [cos(%pi/4) sin(%pi/4) 0 0; ...
+-sin(%pi/4) cos(%pi/4) 0 0; ...
+0 0 1 0; ...
+0 0 0 1];
+tform = affine3d(A);
+s1 = pctransform(s,tform);
+pcshowpair(s,s1)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

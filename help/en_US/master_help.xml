@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book [
+<!--Begin Entities-->
+<!ENTITY ae7c2dc8e8cda633149a4f3a7f80a1e48 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/approxpolyDP.xml">
+<!ENTITY a14c61b32456c5824b5615cbddf4a8113 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/arcLength.xml">
+<!ENTITY acf6a212db1d05d8884d0826f26317a90 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/borderInterpolate.xml">
+<!ENTITY a45d149824ebec9e7015e78f7b12cbe4a SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/boundingRect.xml">
+<!ENTITY adcbc306898eea7dc0256f8f83f2dd84b SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/bwconvhull.xml">
+<!ENTITY a216c09b5e26d479f52a83b42af664ada SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/canny.xml">
+<!ENTITY a037d0726449ba9cf67a444b3e0cfabd8 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/clipLine.xml">
+<!ENTITY a0a378a82f1218e039276d756317408fd SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/convexHull.xml">
+<!ENTITY a909c3c7fefaceca7ebe0323b5583cc33 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/copyMakeBorder.xml">
+<!ENTITY a5561bff33d0c1c8e61e582cb5cb58203 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/drawContours.xml">
+<!ENTITY a5e893979d226d217da50cd9621f6ac15 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/fillConvexPoly.xml">
+<!ENTITY a8601417367b60aa8e24d596aed1ee861 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/findPointsInROI.xml">
+<!ENTITY a3a3da87ad164cd8673ad69422ac653f2 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/pcdenoise.xml">
+<!ENTITY aab2f9f1af8e7ff66a815dca6977f4e53 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/pcdownsample.xml">
+<!ENTITY a1f18321ac5aaa3d398c34ed73078d745 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/pcmerge.xml">
+<!ENTITY af3fd522568ceb1f7188a425ea9f0fd81 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/pcshow.xml">
+<!ENTITY acc8c9cb796006503cf23ea440cca9a63 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/pcshowpair.xml">
+<!ENTITY a600d98d9afa05645b2291ea8d7c0be1a SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/pctransform.xml">
+<!ENTITY aaeab66f06c5e79661a1a0dce61027adf SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/rectangle.xml">
+<!ENTITY a8b90300177eaed47674acbf8176f2362 SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/removeInvalidPoints.xml">
+<!ENTITY ad8b25a0518578ee4771ab15d2d628dec SYSTEM "/home/ebey/Desktop/FOSSEE_Image_Processing_Toolbox-master/help/en_US/select.xml">
+<!--End Entities-->
+]>
+<book version="5.0-subset Scilab" xml:lang="en_US"
+      xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:svg="http://www.w3.org/2000/svg"
+      xmlns:mml="http://www.w3.org/1998/Math/MathML"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:db="http://docbook.org/ns/docbook">
+  <info xml:id='fossee_image_processing_toolbox_manual'>
+    <title>FOSSEE Image Processing Toolbox</title>
+  </info>
+
+<part xml:id='section_1bb18e537862773b1f8e50f6938db4d8'>
+<title>FOSSEE Image Processing Toolbox</title>
+&ae7c2dc8e8cda633149a4f3a7f80a1e48;
+&a14c61b32456c5824b5615cbddf4a8113;
+&acf6a212db1d05d8884d0826f26317a90;
+&a45d149824ebec9e7015e78f7b12cbe4a;
+&adcbc306898eea7dc0256f8f83f2dd84b;
+&a216c09b5e26d479f52a83b42af664ada;
+&a037d0726449ba9cf67a444b3e0cfabd8;
+&a0a378a82f1218e039276d756317408fd;
+&a909c3c7fefaceca7ebe0323b5583cc33;
+&a5561bff33d0c1c8e61e582cb5cb58203;
+&a5e893979d226d217da50cd9621f6ac15;
+&a8601417367b60aa8e24d596aed1ee861;
+&a3a3da87ad164cd8673ad69422ac653f2;
+&aab2f9f1af8e7ff66a815dca6977f4e53;
+&a1f18321ac5aaa3d398c34ed73078d745;
+&af3fd522568ceb1f7188a425ea9f0fd81;
+&acc8c9cb796006503cf23ea440cca9a63;
+&a600d98d9afa05645b2291ea8d7c0be1a;
+&aaeab66f06c5e79661a1a0dce61027adf;
+&a8b90300177eaed47674acbf8176f2362;
+&ad8b25a0518578ee4771ab15d2d628dec;
+</part>
+</book>

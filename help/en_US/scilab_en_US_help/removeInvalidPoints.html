@@ -1,0 +1,84 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>removeInvalidPoints</title>
+    <style type="text/css" media="all">
+      @import url("scilab_code.css");
+      @import url("xml_code.css");
+      @import url("c_code.css");
+      @import url("style.css");
+    </style>
+  </head>
+  <body>
+    <div class="manualnavbar">
+    <table width="100%"><tr>
+      <td width="30%">
+    	<span class="previous"><a href="rectangle.html">&lt;&lt; rectangle</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="select.html">select &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+
+
+
+    <span class="path"><a href="index.html">FOSSEE Image Processing Toolbox</a> &gt;&gt; <a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a> &gt; removeInvalidPoints</span>
+
+    <br /><br />
+    <div class="refnamediv"><h1 class="refname">removeInvalidPoints</h1>
+    <p class="refpurpose">Remove invalid points from a point cloud</p></div>
+
+
+<div class="refsynopsisdiv"><h3 class="title">Calling Sequence</h3>
+   <div class="synopsis"><pre><span class="default">[</span><span class="default">OutputPointCloud</span><span class="default">,</span><span class="default">indices</span><span class="default">] = </span><span class="functionid">removeInvalidPoints</span><span class="default">(</span><span class="default">InputPointCloud</span><span class="default">)</span></pre></div></div>
+
+<div class="refsection"><h3 class="title">Parameters</h3>
+   <dl><dt><span class="term">InputPointCloud :</span>
+      <dd><p class="para">Input point cloud object which may contain invalid points</p></dd></dt>
+   <dt><span class="term">OutputPointCloud :</span>
+      <dd><p class="para">Resultant point cloud after removing invalid points</p></dd></dt>
+   <dt><span class="term">indices :</span>
+      <dd><p class="para">Indices of the valid points in input point cloud object</p></dd></dt></dl></div>
+
+<div class="refsection"><h3 class="title">Description</h3>
+   <p class="para">Return a point cloud object after Inf and Nan points from the input point cloud object</p>
+   <p class="para"></p></div>
+
+<div class="refsection"><h3 class="title">Examples</h3>
+   <div class="programlisting"><table border="0" width="100%"><tr><td width="98%"><pre class="scilabcode"><span class="scilabcomment">//The first point in the file is Inf and the second point is NaN</span>
+<span class="scilabid">s</span> <span class="scilaboperator">=</span> <span class="scilabid">pcread</span><span class="scilabopenclose">(</span><span class="scilabstring">&#0039;</span><span class="scilabstring">data/sphere.ply</span><span class="scilabstring">&#0039;</span><span class="scilabopenclose">)</span>
+<span class="scilabopenclose">[</span><span class="scilabid">pt</span> <span class="scilabid">indices</span><span class="scilabopenclose">]</span> <span class="scilaboperator">=</span> <span class="scilabid">removeInvalidPoints</span><span class="scilabopenclose">(</span><span class="scilabid">s</span><span class="scilabopenclose">)</span><span class="scilabdefault">;</span>
+<span class="scilabid">pt</span></pre></td><td valign="top"><a href="scilab://scilab.execexample/"><img src="ScilabExecute.png" border="0"/></a></td><td valign="top"><a href="scilab://scilab.editexample/"><img src="ScilabEdit.png" border="0"/></a></td><td></td></tr></table></div></div>
+
+<div class="refsection"><h3 class="title">Authors</h3>
+   <ul class="itemizedlist"><li class="member">Ebey Abraham</li></ul></div>
+    <br />
+
+    <div class="manualnavbar">
+    <table width="100%">
+    <tr><td colspan="3" class="next"><a href="http://bugzilla.scilab.org/enter_bug.cgi?product=Scilab%20software&component=Documentation%20pages" class="ulink">Report an issue</a></td></tr>
+<tr>
+      <td width="30%">
+    	<span class="previous"><a href="rectangle.html">&lt;&lt; rectangle</a></span>
+
+      </td>
+      <td width="40%" class="center">
+      	<span class="top"><a href="section_1bb18e537862773b1f8e50f6938db4d8.html">FOSSEE Image Processing Toolbox</a></span>
+
+      </td>
+      <td width="30%" class="next">
+      	<span class="next"><a href="select.html">select &gt;&gt;</a></span>
+
+      </td>
+    </tr></table>
+      <hr />
+    </div>
+  </body>
+</html>

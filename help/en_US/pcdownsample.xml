@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pcdownsample.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pcdownsample" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pcdownsample</refname>
+    <refpurpose>Downsample a point cloud</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   pointCloudOut = pcdownsample(pointCloudIn, 'random', percentage)
+   pointCloudOut = pcdownsample(pointCloudIn, 'gridAverage', gridStep)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>pointCloudIn :</term>
+      <listitem><para> Input point cloud</para></listitem></varlistentry>
+   <varlistentry><term>pointCloudOut :</term>
+      <listitem><para> Output point cloud</para></listitem></varlistentry>
+   <varlistentry><term>'random' :</term>
+      <listitem><para> Downsample cloud using random sampling</para></listitem></varlistentry>
+   <varlistentry><term>percentage :</term>
+      <listitem><para> Percentage of input point cloud that should be present in ouput cloud</para></listitem></varlistentry>
+   <varlistentry><term>'gridAverage' :</term>
+      <listitem><para> Downsample using grid filter</para></listitem></varlistentry>
+   <varlistentry><term>gridStep :</term>
+      <listitem><para> Size of grid</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Downsamples a point cloud using the specified method
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+//Downsample using random sampling
+s = pcread('data/teapot.ply');
+res = pcdownsample(s,'random',10)
+pcshowpair(s,res)
+
+//Downsample using box grid
+s = pcread('data/teapot.ply');
+res = pcdownsample(s,'random',10)
+pcshowpair(s,res)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

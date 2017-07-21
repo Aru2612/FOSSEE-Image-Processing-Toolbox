@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from arcLength.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="arcLength" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>arcLength</refname>
+    <refpurpose>Calculates the perimeter of a closed contour or the curve length.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   res = arcLength(inputCurve, closed)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>inputCurve :</term>
+      <listitem><para> Input matrix points</para></listitem></varlistentry>
+   <varlistentry><term>closed :</term>
+      <listitem><para> Flag indicating whether the curve is closed or not.</para></listitem></varlistentry>
+   <varlistentry><term>res :</term>
+      <listitem><para> arc length of the curve</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The function computes the closed contour perimeter or the curve length.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+img = imread('images/apple.png');
+contours = findContours(img,3,2,0,0);
+arc = list();
+for i = 1:size(contours)
+arc(i) = arcLength(contours(i),'True');
+printf("Contour #%d Arclength = %f\n",i,arc(i))
+end
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Priyanka Hiranandani</member>
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

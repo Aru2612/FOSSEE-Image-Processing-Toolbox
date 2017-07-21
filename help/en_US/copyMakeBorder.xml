@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from copyMakeBorder.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="copyMakeBorder" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>copyMakeBorder</refname>
+    <refpurpose>Draw borders</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   res = copyMakeBorder(src, top, bottom, left, right, borderType, color_mat)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>src :</term>
+      <listitem><para> Source image on which border is to be drawn</para></listitem></varlistentry>
+   <varlistentry><term>top :</term>
+      <listitem><para> Number of pixels to be extapolated to the top of the image</para></listitem></varlistentry>
+   <varlistentry><term>bottom :</term>
+      <listitem><para> Number of pixels to be extapolated to the bottom of the image</para></listitem></varlistentry>
+   <varlistentry><term>left :</term>
+      <listitem><para> Number of pixels to be extapolated to the left of the image</para></listitem></varlistentry>
+   <varlistentry><term>right :</term>
+      <listitem><para> Number of pixels to be extapolated to the right of the image</para></listitem></varlistentry>
+   <varlistentry><term>borderType :</term>
+      <listitem><para> The type of the border to be drawn.</para></listitem></varlistentry>
+   <varlistentry><term>color_mat :</term>
+      <listitem><para> RGB matrix denoting the color scheme of the border</para></listitem></varlistentry>
+   <varlistentry><term>res :</term>
+      <listitem><para> Resulting image after the border is drawn</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The function draws a border of the specified border type
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+img = imread('images/lena.jpeg');
+res = copyMakeBorder(img,100,100,100,100,'BORDER_WRAP',[0,0,0]);
+imshow(res)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

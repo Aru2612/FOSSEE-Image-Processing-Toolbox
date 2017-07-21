@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from drawContours.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="drawContours" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>drawContours</refname>
+    <refpurpose>Draw contours</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   res = drawContours(dst, contours, contourIdx, rgbMat, thickness = 1,linetype = 8)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>dst :</term>
+      <listitem><para> Image on which the contours have to be marked</para></listitem></varlistentry>
+   <varlistentry><term>contours :</term>
+      <listitem><para> List of contour, where each element is a Nx2 matrix of contour points</para></listitem></varlistentry>
+   <varlistentry><term>contourIdx :</term>
+      <listitem><para> 1-based index of the contour which is to be drawn</para></listitem></varlistentry>
+   <varlistentry><term>rgbMat :</term>
+      <listitem><para> 1x3 matrix defining the RGB values of the marking</para></listitem></varlistentry>
+   <varlistentry><term>thickness :</term>
+      <listitem><para> Thickness of the lines the contours are drawn with, negative values will fill the contour. Optional argument with default value as 1.</para></listitem></varlistentry>
+   <varlistentry><term>linetype :</term>
+      <listitem><para> Type of line used to draw the contour. Optional argument with default value as 8.</para></listitem></varlistentry>
+   <varlistentry><term>res :</term>
+      <listitem><para> Output image with the contour marked</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Draws the contour specified by the contour index on the destination image.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+//Read an 3-channel image
+img = imread('images/coin_thresh.png');
+//Convert to single channel grayscale to find contours
+gray = cvtColor(img,'CV_BGR2GRAY');
+contours = findContours(gray,3,2,0,0);
+//Draw all contours
+for i = 1:size(contours)
+img = drawContours(img,contours,i,[0,0,255]);
+end
+imshow(img)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

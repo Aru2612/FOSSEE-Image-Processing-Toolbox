@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from pcdenoise.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="pcdenoise" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>pcdenoise</refname>
+    <refpurpose>Remove noise from point cloud</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   pointCloudOut = pcdenoise(pointCloudIn)
+   [pointCloudOut inliners outliners] = pcdenoise(pointCloudIn)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>pointCloudIn :</term>
+      <listitem><para> Input point cloud</para></listitem></varlistentry>
+   <varlistentry><term>pointCloudOut :</term>
+      <listitem><para> Output point cloud</para></listitem></varlistentry>
+   <varlistentry><term>inliners :</term>
+      <listitem><para> Indices of inliner points</para></listitem></varlistentry>
+   <varlistentry><term>outliners :</term>
+      <listitem><para> Indices of outliner points</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+Function removes noise from input point cloud
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+s = pcread('data/noise.ply');
+[res inliners outliners] = pcdenoise(s);
+pcshowpair(s,res)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>

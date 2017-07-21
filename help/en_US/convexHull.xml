@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ *
+ * This help file was generated from convexHull.sci using help_from_sci().
+ *
+ -->
+
+<refentry version="5.0-subset Scilab" xml:id="convexHull" xml:lang="en"
+          xmlns="http://docbook.org/ns/docbook"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns:ns3="http://www.w3.org/1999/xhtml"
+          xmlns:mml="http://www.w3.org/1998/Math/MathML"
+          xmlns:scilab="http://www.scilab.org"
+          xmlns:db="http://docbook.org/ns/docbook">
+
+  <refnamediv>
+    <refname>convexHull</refname>
+    <refpurpose>Finds the convex hull of a point set.</refpurpose>
+  </refnamediv>
+
+
+<refsynopsisdiv>
+   <title>Calling Sequence</title>
+   <synopsis>
+   hull = canvexHull(points, clockwise, returnPoints)
+   
+   </synopsis>
+</refsynopsisdiv>
+
+<refsection>
+   <title>Parameters</title>
+   <variablelist>
+   <varlistentry><term>points :</term>
+      <listitem><para> Input 2D point set</para></listitem></varlistentry>
+   <varlistentry><term>clockwise :</term>
+      <listitem><para> Orientation flag. If it is 1, the output convex hull is oriented clockwise. Otherwise, it is oriented counter-clockwise. The assumed coordinate system has its X axis pointing to the right, and its Y axis pointing upwards.</para></listitem></varlistentry>
+   <varlistentry><term>returnPoints :</term>
+      <listitem><para> Operation flag. In case of a matrix, when the flag is true, the function returns convex hull points. Otherwise, it returns indices of the convex hull points.</para></listitem></varlistentry>
+   <varlistentry><term>hull :</term>
+      <listitem><para> Output 2D point set containing the convex hull points</para></listitem></varlistentry>
+   </variablelist>
+</refsection>
+
+<refsection>
+   <title>Description</title>
+   <para>
+The functions find the convex hull of a 2D point set.
+   </para>
+   <para>
+</para>
+</refsection>
+
+<refsection>
+   <title>Examples</title>
+   <programlisting role="example"><![CDATA[
+img = imread('images/coin_thresh.png');
+gray = cvtColor(img,'CV_BGR2GRAY');
+//find the contours points
+contours = findContours(gray,3,2,0,0);
+//find the convex hull of the contour points
+hull = list();
+for i = 1:size(contours)
+hull(i) = convexHull(contours(i),1,1);
+end
+//mark the hulls
+for i = 1:size(hull)
+img = drawContours(img,hull,i,[0,0,255]);
+end
+imshow(img)
+
+   ]]></programlisting>
+</refsection>
+
+<refsection>
+   <title>Authors</title>
+   <simplelist type="vert">
+   <member>Abhilasha Sancheti</member>
+   <member>Sukul Bagai</member>
+   <member>Ebey Abraham</member>
+   </simplelist>
+</refsection>
+</refentry>
